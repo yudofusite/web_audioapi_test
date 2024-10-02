@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="jp">
+
+<head>
+<meta charset="UTF-8" />
+<title>webAudioAPIテスト</title>
+</head>
+<body>
+<button id="start">再生</button>
+<audio src="yj.wav" type="audio/mpeg"></audio>
+	<script>
+	const ac = new AudioContext();
+	const ae = document.querySelector("audio");
+	const track = ac.createMediaElementSource(ae);
+	track.connect(ac.destination);
+
+	const st = document.getElementById("start");
+	st.addEventListener("click", function() {
+		if (ac.state === "suspendid") {
+		ac.resume();
+		} else {
+		ae.play();
+		};
+	});
+	</script>
+</body>
+</html>
