@@ -17,10 +17,10 @@
 </head>
 <body>
 <button id="start">やりますねぇ！再生</button>
-<audio src="yj.wav" type="audio/mpeg"></audio>
+<audio src="yj.wav" type="audio/mpeg" id="ongen"></audio>
 	<script>
 	const ac = new AudioContext();
-	const ae = document.getElementById("start");
+	const ae = document.getElementById("ongen");
 	const track = ac.createMediaElementSource(ae);
 	track.connect(ac.destination);
 
