@@ -17,10 +17,11 @@
 </head>
 <body>
 <button id="start">やりますねぇ！再生</button>
+<button id="start2">やりますねぇ！加工１</button>
 <audio src="yj.wav" type="audio/mpeg"></audio>
 	<script>
 	const ac = new AudioContext();
-	const ae = document.querySelector("audio");
+	const ae = document.getElementById("start");
 	const track = ac.createMediaElementSource(ae);
 	track.connect(ac.destination);
 
@@ -28,6 +29,7 @@
 	st.addEventListener("click", function() {
 		if (ac.state === "suspended") {
 		ac.resume();
+		console.log("play");
 		console.log("resume");
 		} else {
 		ae.play();
